@@ -1,5 +1,5 @@
 # IdentityApp
-## This is ASP.NET Core application with registration and authentication.
+## This is ASP.NET Core application with registration and authentication used basic CRUD operations.
 
 Authenticated users should have access the user management table: id, name, e-mail, last login time, registration time, status (active/blocked). 
 If user account is blocked or deleted any next user’s request should redirect to the login page. Blocked user can not be able to login, deleted user can re-register.
