@@ -4,7 +4,7 @@
 Authenticated users should have access the user management table: id, name, e-mail, last login time, registration time, status (active/blocked). 
 If user account is blocked or deleted any next user’s request should redirect to the login page. Blocked user can not be able to login, deleted user can re-register.
 
-![image](https://user-images.githubusercontent.com/100798944/207672883-7d6ce1ec-15f8-4981-8c84-1bcf8cf65c89.png)
+![image](https://user-images.githubusercontent.com/100798944/207674002-54e9ad18-5cc0-4e1d-a542-5b54f4c54e08.png)
 
 ## The toolbar has 3 actions:
 + Block
