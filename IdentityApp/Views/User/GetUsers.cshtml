@@ -1,0 +1,53 @@
+﻿@using IdentityApp.Areas.Identity.Data;
+@{
+    @model IEnumerable<ApplicationUser>;
+}
+<html>
+    <head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/IdentityApp.styles.css" asp-append-version="true" />
+    </head>
+    <body>
+        <div id="form_result"></div>
+    <form asp-controller="User" id="myForm" method="get">
+        <input type="submit" class="btn btn-primary viewDialog" value="Block" id="button" asp-action="Block" formmethod="post">
+        <input type="submit" class="btn btn-primary viewDialog" value="Unblock" id="button" asp-action="Unblock" formmethod="post">
+        <input type="submit" class="btn btn-primary viewDialog" value="Delete" id="button" asp-action="Delete" formmethod="post">
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><input class="form-check-input" type="checkbox" id="selectAll"></th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">RegistrationDate</th>
+                    <th scope="col">LastLoginDate</th>
+                    <th scope="col">StatusBlock</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td><input class="form-check-input checkbox" name="TheModelFieldName" value="@user.Id" type="checkbox" id="@user.Id" /></td>
+                        <td>@user.Id</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>@user.registrationDate</td>
+                        <td>@user.lastLoginDate</td>
+                        <td>@user.statusBlock</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div id="modDialog" class="modal fade">
+            <div id="dialogContent" class="modal-dialog modal-dialog-centered"></div>
+        </div>
+    </form>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    </body>
+</html>
